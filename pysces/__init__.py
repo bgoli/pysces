@@ -80,7 +80,7 @@ eggdir = 'pysces-%s-py%s.%s-%s.egg' %(__version__, os.sys.version_info[0],\
 os.sys.version_info[1], os.sys.platform)
 for path in os.sys.path:
     chkPath = path.split(os.path.sep)[-1]
-    if chkPath == 'pysces' and path != os.getcwd():
+    if chkPath == 'pysces' and path != os.sys.base_prefix and path != os.getcwd():
         install_dir = path
         inipath = os.path.join(install_dir, 'pyscfg.ini')
         break
